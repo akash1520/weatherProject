@@ -6,7 +6,7 @@ const app = express()
 
 require("dotenv").config();
 
-const apikey = process.env.apikey;
+const apikey = process.env.API_KEY;
 
 app.use(bodyParser.urlencoded({extended:true}))
 
@@ -16,7 +16,7 @@ app.get("/",(req,res)=>{
 })
 
 app.post("/",(req,res)=>{
-    const url="https://api.openweathermap.org/data/2.5/weather?q="+req.body.city+"&appid=${apikey}"&units="+req.body.unit+"&lang="+req.body.lang
+    const url="https://api.openweathermap.org/data/2.5/weather?q="+req.body.city+"&appid="+apikey+"&units="+req.body.unit+"&lang="+req.body.lang
     https.get(url,(response)=>{
         console.log(response.statusCode)
         response.on("data",(data)=>{
