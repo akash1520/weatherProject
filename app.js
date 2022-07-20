@@ -35,4 +35,4 @@ app.post("/",(req,res)=>{
 
 
 
-app.listen(3000,()=>{console.log("Server is running.")})
+app.listen(PORT,()=>{console.log("Server is running.")})
