@@ -3,7 +3,12 @@ const express = require ("express")
 const https = require("https")
 const bodyParser= require("body-parser")
 const app = express()
-const apikey="1ce09f18fc50603c69e8c1dff6d5c9e0"
+const dotenv = require("dotenv")
+
+dotenv.config();
+
+const apikey = process.env.apikey;
+
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.get("/",(req,res)=>{
