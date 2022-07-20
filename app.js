@@ -3,9 +3,8 @@ const express = require ("express")
 const https = require("https")
 const bodyParser= require("body-parser")
 const app = express()
-const dotenv = require("dotenv")
 
-dotenv.config();
+require("dotenv").config();
 
 const apikey = process.env.apikey;
 
@@ -35,4 +34,4 @@ app.post("/",(req,res)=>{
 
 
 
-app.listen(PORT|| "3000",()=>{console.log("Server is running.")})
+app.listen(process.env.PORT ||"3000",()=>{console.log("Server is running.")})
